@@ -1,5 +1,7 @@
 # Project binary file
 go-image-resizer
+main
+
 # Golang vendor directory
 vendor/
 
@@ -13,3 +15,5 @@ config.yaml
 # Project s3 Data
 s3data/*
 !go-image-resizer/
+
+

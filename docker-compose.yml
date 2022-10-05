@@ -25,7 +25,7 @@ services:
       dockerfile: Dockerfile
     container_name: go-resize-proxy
     command: >
-      /bin/sh -c "./docker-resize-proxy"
+      /bin/sh -c "./main"
     volumes:
       - ./go-resize-proxy:/app
     deploy:
