@@ -160,23 +160,6 @@ func resizeImage(path string, resp *http.Response, width int, height int, forceR
 	resp.Header["Content-Length"] = []string{fmt.Sprint(len(newImage))}
 	fmt.Println("go-proxy  resized image size: ", resp.ContentLength, "bytes")
 
-	//[#8] optionally do a background upload to s3 without making the caller to wait
-	//imageContentType := resp.Header.Get("Content-Type")
-
-	go func() {
-		//fmt.Println("go-proxy - background processing response in go routine", imageContentType)
-		/*	This part may be implemented using a throttled channel or something to limit
-			the maximum number of uploads running at a time.
-		*/
-
-		//fmt.Println(path)
-		//fmt.Println(imageContentType)
-		//var aa *helpers.S3Storage
-		//aa = helpers.NewS3Storage()
-		//aa.Upload(path, newImage, imageContentType)
-		// s3storage.Upload(path, newImage, imageContentType)
-	}()
-
 	return nil
 }
 
