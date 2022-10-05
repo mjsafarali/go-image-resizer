@@ -1,0 +1,14 @@
+# Project binary file
+go-image-resizer
+# Golang vendor directory
+vendor/
+
+config.yaml
+.build/
+.idea/
+.report.xml
+.DS_Store
+.env
+
+# Project s3 Data
+s3data/
