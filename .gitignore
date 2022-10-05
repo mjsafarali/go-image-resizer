@@ -11,4 +11,5 @@ config.yaml
 .env
 
 # Project s3 Data
-s3data/
+s3data/*
+!go-image-resizer/
