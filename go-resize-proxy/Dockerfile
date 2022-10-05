@@ -13,21 +13,21 @@ RUN set -x -o pipefail \
     vips-dev \
     && rm -rf /var/cache/apk/*
     
-WORKDIR /app
+WORKDIR /app/go-image-resizer
 
-COPY go.mod ./
-COPY go.sum ./
+COPY go.mod .
+COPY go.sum .
 
 # Download necessary Go modules
 RUN go mod download
 
 # COPY the source code as the last step
-COPY *.go ./
+COPY . .
 
 # Build
-RUN go build -o /docker-resize-proxy
+RUN go build -o ./go-image-resizer/docker-resize-proxy .
 
 EXPOSE 8080
 
-CMD [ "/docker-resize-proxy" ]
+CMD [ "./docker-resize-proxy" ]
 
